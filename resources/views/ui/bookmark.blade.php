@@ -145,10 +145,8 @@
             </li>
         </ul>
     </section>
-    <div class="w-full px-4 my-4">
-        <div class="bg-gray-200 h-20 grid place-items-center">
-            <p class=" text-gray-600">Space Iklan di persilahkan</p>
-        </div>
-    </div>
+
+    @include('components.ads')
+
     @include('components.footer')
 @endsection

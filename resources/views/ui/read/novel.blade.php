@@ -1,7 +1,14 @@
 @extends('_layout.app-container')
 
+<style>
+    #content p {
+        margin-bottom: 16px
+    }
+</style>
+
 @section('content')
     <nav class="w-full p-4 border-b border-gray-300 flex items-center bg-white justify-between">
+        <input type="hidden" name="slug" value="{{ $slug }}">
         <div class="flex items-center gap-3">
             <a href="{{ url()->previous() }}">
                 <svg class="text-primary" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
@@ -11,7 +18,7 @@
                 </svg>
             </a>
 
-            <p class="line-clamp-1 w-[80%]">Mushoku Tensei - Jobless Reincarnation</p>
+            <p class="line-clamp-1 w-[80%]" id="navbar-title"></p>
         </div>
         <a href="">
             <svg class="text-primary" stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24"
@@ -34,7 +41,7 @@
                 </path>
             </svg>
         </a>
-        <div class="w-full p-2 border-l border-gray-300 flex-1 text-center font-semibold text-blue-500">200</div>
+        <div class="w-full p-2 border-l border-gray-300 flex-1 text-center font-semibold text-blue-500" id="current-chapter">200</div>
         <a href="" class=" w-full p-2 border-l border-gray-300 flex-1 text-center flex justify-center">
             <svg class="m-auto opacity-80 -rotate-90" stroke="currentColor" fill="currentColor" stroke-width="0"
                 viewBox="0 0 24 24" height="16px" width="16px" xmlns="http://www.w3.org/2000/svg">
@@ -49,12 +56,12 @@
 
         {{-- header --}}
         <div class="flex gap-3 items-center mb-4">
-            <p class="bg-success px-2 text-white text-sm">Update Novel</p>
-            <p class="opacity-40 text-sm">2005.05.18</p>
+            <p class="bg-success px-2 text-white text-sm" id="status"></p>
+            <p class="opacity-40 text-sm" id="date-upload">2005.05.18</p>
         </div>
         <div class="header-chapter p-4 text-center text-slate-900">
-            <p class="text-lg font-semibold">Chapter 12 - Kembalinya Rudeus</p>
-            <p class="text-md opacity-50">Mushoku Tensei - Jobless Reincarnation</p>
+            <p class="text-lg font-semibold">Chapter <span id="chapter"></span> - <span id="title"></span></p>
+            <p class="text-md opacity-50" id="name-novel"></p>
         </div>
 
         {{-- gak tau apaan ini bagus aja --}}
@@ -82,58 +89,7 @@
         <p>&nbsp;</p>
 
         {{-- content --}}
-        <section class="text-left text-slate-900/80 font-poppins">
-            <p class="mb-4">Hai, yang di sana. Itu FUNA.</p>
-            <p class="mb-4">Menyimpan 80.000 Emas di Dunia Lain untuk Pensiun saya&nbsp;akhirnya mencapai volume empat.
-                Kita hampir mencapai separuh tujuan saya untuk mencapai dua digit. Terima kasih banyak!</p>
-            <p class="mb-4">Dalam volume ini, Mitsuha kembali dari perjalanannya, memperkuat pijakannya di Jepang, dan
-                mendapatkan basis di negara lain di Bumi. Dia juga akhirnya pergi ke Dunia Baru, rumah dari armada
-                penyerang!
-            </p>
-            <p class="mb-4">Dan sekarang, yang menghalangi Mitsuha adalah negara agresor, kerajaan Vanel. Dia juga harus
-                mengatasi kendala besar lainnya, kantor pajak Jepang!</p>
-            <p class="mb-4">&nbsp;</p>
-            <p class="mb-4">Di volume lima, Kabupaten Yamano berperang dengan negara di Bumi!</p>
-            <p class="mb-4">Mitsuha: “Saya bisa menjadi sangat kejam, Anda tahu?”</p>
-            <p class="mb-4">Colette: “Namanya Colette, dan saya adalah roh kapal&nbsp;Aeras&nbsp;…”</p>
-            <p class="mb-4">Sabine dan Colette diculik, lebih banyak episode di kafe galeri yang aneh, dan seorang gadis
-                muda mengejar ambisinya di&nbsp;Saat Burung Gagak Terbang dengan Roflcopter.</p>
-            <p class="mb-4">Mitsuha: “Saya selangkah lebih dekat ke tujuan saya…”</p>
-            <p class="mb-4">Lihatlah bab terbaru di majalah webcomic, Suiyobi no Sirius
-                (http://seiga.nicovideo.jp/manga/official/w_sirius/), pada hari Jumat kedua dan keempat
-                setiap bulan!</p>
-            <p class="mb-4">Anime untuk seri saya yang lain<em>&nbsp;Bukankah Saya Mengatakan untuk Membuat Kemampuan Saya
-                    Rata-Rata di Kehidupan Selanjutnya?!&nbsp;</em>mulai ditayangkan pada bulan Oktober!</p>
-            <p class="mb-4">Juga di bulan Oktober adalah peluncuran&nbsp;Saya Akan Bertahan Menggunakan Ramuan!&nbsp;seri
-                novel volum lima. Sebulan penuh penuh dengan seri FUNA! Silakan menantikannya!</p>
-            <p class="mb-4">&nbsp;</p>
-            <p class="mb-4">Terima kasih yang sebesar-besarnya kepada editor saya, ilustrator, perancang penjilidan,
-                korektor, staf percetakan, penerbitan, distribusi, dan penjualan, administrator Shosetsuka ni Naro, para
-                pembaca yang menunjukkan kesalahan penulisan dan memberi saya saran di bagian komentar , dan tentu saja,
-                semua orang yang membaca buku ini.</p>
-            <p class="mb-4">Terima kasih banyak!</p>
-            <p class="mb-4">Saya berharap dapat bertemu Anda lagi di volume berikutnya.</p>
-            <p class="mb-4">&nbsp;</p>
-            <p class="mb-4">Author</p>
-            <p class="mb-4"><strong>Funa</strong></p>
-            <p class="mb-4">Impian saya untuk menjadi kapten pesawat ruang angkasa antarplanet sirna bahkan sebelum ia
-                meninggalkan
-                atmosfer.</p>
-            <p class="mb-4">Tapi impianku menjadi penulis dan bepergian ke dunia lain menjadi kenyataan─Mitsuha dan
-                kawan-kawan
-                mewujudkannya.</p>
-            <p class="mb-4">Yang terpenting, dengan adaptasi manga dan anime, novel ini membawa saya melampaui impian
-                terliar saya.</p>
-            <p class="mb-4">Kita sudah sampai sejauh ini; mari kita melangkah lebih jauh lagi…untuk melihat seberapa jauh
-                mereka akan
-                membawa kita!</p>
-            <p class="mb-4">&nbsp;</p>
-            <p class="mb-4">Ilustrator</p>
-            <p class="mb-4"><strong>Touzai</strong></p>
-            <p class="mb-4">Saya tidak punya kata-kata karena saya hanyalah seorang pemula.</p>
-            <p class="mb-4">Perbaikan diri. Hanya itu yang ada.</p>
-            <p class="mb-4">&nbsp;</p>
-        </section>
+        <section class="text-left text-slate-900/80 font-poppins" id="content"></section>
 
         <div class="flex justify-end">
             <a class="text-blue-500 flex items-center gap-4" href="">
@@ -149,7 +105,7 @@
         </div>
     </section>
 
-    <section class="p-4 border-b border-gray-300">
+    <section class="pt-4 px-4 border-b border-gray-300">
         <form>
             <button class="bg-gray-50 text-gray-500 p-3 border border-gray-300">
                 Simpan di bookmark
@@ -195,4 +151,8 @@
             </div>
         </section>
     </footer>
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('') }}js/read.js"></script>
 @endsection

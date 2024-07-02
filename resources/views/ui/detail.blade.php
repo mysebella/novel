@@ -2,6 +2,7 @@
 
 @section('content')
     <nav class="w-full p-4 border-b border-gray-300 flex items-center justify-between">
+        <input type="hidden" name="slug" value="{{ $slug }}">
         <div class="flex items-center gap-3">
             <a href="{{ url()->previous() }}">
                 <svg class="text-primary" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
@@ -31,74 +32,22 @@
     </div>
 
     <section class="p-4 bg-white">
-        <img class="w-52 m-auto mb-3" src="https://static.wikia.nocookie.net/mushokutensei/images/0/0a/LN_Vol_16_JP.png"
+        <img class="w-52 m-auto mb-3" id="cover" src="https://static.wikia.nocookie.net/mushokutensei/images/0/0a/LN_Vol_16_JP.png"
             loading="lazy" />
         <div>
-            <p class="text-lg text-center">Mushoku Tensei - Job Reincarnation</p>
-            <p class="mb-4 text-black text-center">Penulis : <span class="text-blue-500">Nageyama</span></p>
-            <p class="text-black/80">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo eos at earum officia,
-                saepe
-                fuga quibusdam
-                alias. A, sequi asperiores. Laudantium eaque voluptate modi vitae velit repudiandae sint officia molestias
-                debitis, reiciendis quae repellat sit, quos nobis maiores voluptatem quia? Suscipit eveniet temporibus
-                repellat expedita harum facere quos beatae quam.</p>
+            <p class="text-lg text-center" id="title"></p>
+            <p class="mb-4 text-black text-center">Penulis : <span id="author" class="text-blue-500"></span></p>
+            <p class="text-black/80" id="synopsis"></p>
         </div>
     </section>
 
     <section class="bg-white border-b border-gray-300 pb-6">
         <p class="text-lg py-2 px-4">Daftar chapter</p>
-        <ul class="overflow-scroll h-80">
-            <li class="py-3 hover:bg-gray-50 px-4">
-                <a href="{{ route('read') }}">
-                    <div>
-                        <p class="text-blue-500 line-clamp-1">Chapter 1 - Terlahir kembali</p>
-                        <div class="flex gap-3 mt-2 items-center">
-                            <p class="bg-success px-2 text-white text-sm">New Update</p>
-                            <p class="opacity-40 text-sm">2005.05.18</p>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class="py-3 hover:bg-gray-50 px-4">
-                <a href="{{ route('read') }}">
-                    <div>
-                        <p class="text-blue-500 line-clamp-1">Chapter 2 - Guru Imut</p>
-                        <p class=" text-black/50">2024.06.23</p>
-                    </div>
-                </a>
-            </li>
-            <li class="py-3 hover:bg-gray-50 px-4">
-                <a href="{{ route('read') }}">
-                    <div>
-                        <p class="text-blue-500 line-clamp-1">Chapter 3 - Bencana Teleportasi</p>
-                        <p class=" text-black/50">2024.06.23</p>
-                    </div>
-                </a>
-            </li>
-            <li class="py-3 hover:bg-gray-50 px-4">
-                <a href="{{ route('read') }}">
-                    <div>
-                        <p class="text-blue-500 line-clamp-1">Chapter 4 - Malam Sunyi</p>
-                        <p class=" text-black/50">2024.06.23</p>
-                    </div>
-                </a>
-            </li>
-            <li class="py-3 hover:bg-gray-50 px-4">
-                <a href="{{ route('read') }}">
-                    <div>
-                        <p class="text-blue-500 line-clamp-1">Chapter 1 - Terlahir kembali</p>
-                        <p class=" text-black/50">2024.06.23</p>
-                    </div>
-                </a>
-            </li>
+        <ul class="overflow-scroll h-80" id="list-chapter">
         </ul>
     </section>
 
-    <div class="w-full px-4 my-4">
-        <div class="bg-gray-200 h-20 grid place-items-center">
-            <p class=" text-gray-600">Space Iklan di persilahkan</p>
-        </div>
-    </div>
+    @include('components.ads')
 
     <footer class="border-t border-gray-300">
         <section class="p-4 border-b border-gray-300 bg-white">
@@ -137,4 +86,47 @@
             </div>
         </section>
     </footer>
+@endsection
+
+@section('javascript')
+    <script>
+
+        class Detail extends App {
+            _detail(params) {
+                this._api({
+                    url : "/api/novel/detail/" + $('input[name=slug]').val(),
+                    method: "GET",
+                    success: (item) => {
+                        $('#cover').attr('src', item.image)
+                        $('#title').text(item.title)
+                        $('#author').text(item.author)
+                        $('#synopsis').text(item.synopsis)
+
+                        const slug = item.slug
+                        let html = '';
+
+                        item.content.forEach((item, index) => {
+                            html += `
+                                <li class="py-3 hover:bg-gray-50 px-4">
+                                    <a href="/read/${slug}/volume/${item.volume}/chapter/${item.chapter}">
+                                        <div>
+                                            <p class="text-blue-500 line-clamp-2">Chapter ${ Math.ceil(item.chapter)} volume ${Math.ceil(item.volume)} - ${item.title}</p>
+                                            <div class="flex gap-3 mt-2 items-center">
+                                                ${index == 0 ? '<p class="bg-success px-2 text-white text-sm">New Update</p>' : ""}
+                                                <p class="opacity-40 text-sm">${this.format(item.created_at)}</p>
+                                            </div>
+                                        </div>
+                                </li>
+                            `
+                        });
+
+                        $('#list-chapter').html(html)
+                    }
+                })
+            }
+        }
+
+        const detail = new Detail()
+        detail._detail()
+    </script>
 @endsection

@@ -2,17 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class ReadController extends Controller
 {
-    public function index()
+    public function index(string $slug)
     {
-        return view('ui.read.novel');
+        return view('ui.read.novel', ["slug" => $slug]);
     }
 
-    public function blog()
+    public function news()
     {
-        return view('ui.read.blog');
+        return view('ui.read.news');
     }
 }

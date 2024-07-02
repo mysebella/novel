@@ -15,37 +15,6 @@
 </div>
 
 <section class="w-full bg-white shadow-sm mb-4 border-y border-dashed border-primary">
-    <ul class="">
-        <li class="py-3 border-b border-gray-100 last:border-b-0 px-4 hover:bg-gray-100">
-            <a href="{{ route('read.blog') }}">
-                <div class="flex gap-3 mb-2 items-center">
-                    <p class="bg-danger px-2 text-white text-sm">Berita Penting</p>
-                    <p class="opacity-40 text-sm">2005.05.18</p>
-                </div>
-                <p class="text-blue-500 line-clamp-2 text-md">Dicari programmer PHP Laravel berpengalaman dalam
-                    pengembangan saas</p>
-            </a>
-        </li>
-
-        <li class="py-3 border-b border-gray-100 last:border-b-0 px-4 hover:bg-gray-100">
-            <a href="{{ route('read.blog') }}">
-                <div class="flex gap-3 mb-2 items-center">
-                    <p class="bg-danger px-2 text-white text-sm">Berita Penting</p>
-                    <p class="opacity-40 text-sm">2005.05.18</p>
-                </div>
-                <p class="text-blue-500 line-clamp-2 text-md">Dicari seorang translator dari Jepang, Korea, English ke
-                    Indonesia</p>
-            </a>
-        </li>
-
-        <li class="py-3 border-b border-gray-100 last:border-b-0 px-4 hover:bg-gray-100">
-            <a href="{{ route('read.blog') }}">
-                <div class="flex gap-3 mb-2 items-center">
-                    <p class="bg-danger px-2 text-white text-sm">Berita Penting</p>
-                    <p class="opacity-40 text-sm">2005.05.18</p>
-                </div>
-                <p class="text-blue-500 line-clamp-2 text-md">Pengumuman starting server pada tanggal 25 January</p>
-            </a>
-        </li>
+    <ul class="" id="news-container">
     </ul>
 </section>

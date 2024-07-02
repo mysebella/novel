@@ -40,7 +40,7 @@
         </svg>
         <p class="text-sm mt-1">aplikasi</p>
     </div>
-    <a href="{{ route('blog') }}"
+    <a href="{{ route('news') }}"
         class="flex-1 h-16 border-l-[1px] border-gray-50/10 flex justify-center items-center text-white flex-col md:flex-row">
         <svg class="mb-[1px]" stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512"
             height="20px" width="20px" xmlns="http://www.w3.org/2000/svg">

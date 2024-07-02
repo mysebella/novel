@@ -32,7 +32,7 @@
         <section class="w-full bg-white shadow-sm mb-4 border-y border-dashed border-primary">
             <ul class="">
                 <li class="py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-100 px-4">
-                    <a href="{{ route('detail') }}">
+                    <a href="">
                         <div class="text-blue-500 line-clamp-1 flex gap-2 items-center">
                             <svg class="mb-1 text-warning" stroke="currentColor" fill="currentColor" stroke-width="0"
                                 viewBox="0 0 256 256" height="16px" width="16px" xmlns="http://www.w3.org/2000/svg">
@@ -49,7 +49,7 @@
                     </a>
                 </li>
                 <li class="py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-100 px-4">
-                    <a href="{{ route('detail') }}">
+                    <a href="">
                         <div class="text-blue-500 line-clamp-1 flex gap-2 items-center">
                             <svg class="mb-1 text-gray-400" stroke="currentColor" fill="currentColor" stroke-width="0"
                                 viewBox="0 0 256 256" height="16px" width="16px" xmlns="http://www.w3.org/2000/svg">
@@ -66,7 +66,7 @@
                     </a>
                 </li>
                 <li class="py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-100 px-4">
-                    <a href="{{ route('detail') }}">
+                    <a href="">
                         <div class="text-blue-500 line-clamp-1 flex gap-2 items-center">
                             <svg class="mb-1 text-amber-800" stroke="currentColor" fill="currentColor" stroke-width="0"
                                 viewBox="0 0 256 256" height="16px" width="16px" xmlns="http://www.w3.org/2000/svg">
@@ -83,7 +83,7 @@
                     </a>
                 </li>
                 <li class="py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-100 px-4">
-                    <a href="{{ route('detail') }}">
+                    <a href="">
                         <div class="text-blue-500 line-clamp-1 flex gap-2 items-center">
                             Sword Art Online
                         </div>
@@ -94,7 +94,7 @@
                     </a>
                 </li>
                 <li class="py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-100 px-4">
-                    <a href="{{ route('detail') }}">
+                    <a href="">
                         <div class="text-blue-500 line-clamp-1 flex gap-2 items-center">
                             Re:Zero kara Hajimeru Isekai Seikatsu
                         </div>

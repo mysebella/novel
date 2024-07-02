@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class DetailController extends Controller
 {
-    public function index()
+    public function index(string $slug)
     {
-        return view('ui.detail');
+        return view('ui.detail', ["slug" => $slug]);
     }
 }

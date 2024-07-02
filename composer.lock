@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "eba04bbb24b3180d2a6614993a886c4b",
+    "content-hash": "f7c012a4f495b994b09ad050fe1c087e",
     "packages": [
         {
             "name": "brick/math",
@@ -505,6 +505,59 @@
                 }
             ],
             "time": "2023-10-06T06:47:41+00:00"
+        },
+        {
+            "name": "f9webltd/laravel-api-response-helpers",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/f9webltd/laravel-api-response-helpers.git",
+                "reference": "2e30e76b9e0c83a533baeebb52f9d2f6c033f3cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/f9webltd/laravel-api-response-helpers/zipball/2e30e76b9e0c83a533baeebb52f9d2f6c033f3cd",
+                "reference": "2e30e76b9e0c83a533baeebb52f9d2f6c033f3cd",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^8.12|^9.0|^10.0|^11.0",
+                "php": "^8.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^6.23|^7.0|^8.0|^9.0",
+                "phpunit/phpunit": "^9.4|^10.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "F9Web\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rob Allport",
+                    "email": "rob@f9web.co.uk",
+                    "homepage": "https://www.f9web.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A super simple package allowing for consistent API responses throughout your Laravel application ",
+            "homepage": "https://github.com/f9webltd/laravel-api-response-helpers",
+            "keywords": [
+                "laravel",
+                "laravel api response",
+                "laravel api response helpers"
+            ],
+            "support": {
+                "issues": "https://github.com/f9webltd/laravel-api-response-helpers/issues",
+                "source": "https://github.com/f9webltd/laravel-api-response-helpers/tree/2.0.1"
+            },
+            "time": "2024-03-10T13:11:45+00:00"
         },
         {
             "name": "fruitcake/php-cors",
@@ -1052,16 +1105,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v11.11.1",
+            "version": "v11.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "c9b52e84bd18f155e5ba59b948c7da3e7f37e87f"
+                "reference": "9a6d9cea83cfa6b9e8eda05c89741d0411d8ebe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/c9b52e84bd18f155e5ba59b948c7da3e7f37e87f",
-                "reference": "c9b52e84bd18f155e5ba59b948c7da3e7f37e87f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9a6d9cea83cfa6b9e8eda05c89741d0411d8ebe8",
+                "reference": "9a6d9cea83cfa6b9e8eda05c89741d0411d8ebe8",
                 "shasum": ""
             },
             "require": {
@@ -1253,7 +1306,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-06-20T10:54:53+00:00"
+            "time": "2024-06-25T19:33:56+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -5995,16 +6048,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.29.3",
+            "version": "v1.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "e35b3ffe1b9ea598246d7e99197ee8799f6dc2e5"
+                "reference": "e08b594052385ab9891dd86047e52da8a953c827"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/e35b3ffe1b9ea598246d7e99197ee8799f6dc2e5",
-                "reference": "e35b3ffe1b9ea598246d7e99197ee8799f6dc2e5",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/e08b594052385ab9891dd86047e52da8a953c827",
+                "reference": "e08b594052385ab9891dd86047e52da8a953c827",
                 "shasum": ""
             },
             "require": {
@@ -6054,7 +6107,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2024-06-12T16:24:41+00:00"
+            "time": "2024-06-18T17:36:56+00:00"
         },
         {
             "name": "mockery/mockery",

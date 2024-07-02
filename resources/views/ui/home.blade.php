@@ -27,23 +27,17 @@
         </a>
     </div>
 
-    {{-- space ads start --}}
-    <div class="w-full px-4 mb-4">
-        <div class="bg-gray-200 h-20 grid place-items-center">
-            <p class=" text-gray-600">Space Iklan di persilahkan</p>
-        </div>
-    </div>
-    {{-- space ads end --}}
+    @include('components.ads')
 
     @include('ui.components.news')
     @include('ui.components.update')
-    @include('ui.components.recomendation')
+    @include('ui.components.ranking')
 
-    <div class="w-full px-4 mb-4">
-        <div class="bg-gray-200 h-20 grid place-items-center">
-            <p class=" text-gray-600">Space Iklan di persilahkan</p>
-        </div>
-    </div>
+    @include('components.ads')
 
     @include('components.footer')
+@endsection
+
+@section('javascript')
+    <script src="{{ asset('') }}js/home.js"></script>
 @endsection
